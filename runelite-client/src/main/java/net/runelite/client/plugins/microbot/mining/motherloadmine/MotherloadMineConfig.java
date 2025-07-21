@@ -51,14 +51,25 @@ public interface MotherloadMineConfig extends Config {
         return false;
     }
 
+    @ConfigItem(
+            keyName = "ignorePlayers",
+            name = "Ignore players at the lower level",
+            description = "Ignore players and mine the same nearest Vein",
+            position = 4
+
+    )
+    default boolean ignorePlayers() {return false; }
+
     // Mining Area Selection
     @ConfigItem(
             keyName = "miningArea",
             name = "Mining Area",
             description = "Choose the specific area to mine in Motherload Mine",
-            position = 4
+            position = 5
     )
     default MLMMiningSpotList miningArea() {
         return MLMMiningSpotList.ANY;
     }
+
+
 }

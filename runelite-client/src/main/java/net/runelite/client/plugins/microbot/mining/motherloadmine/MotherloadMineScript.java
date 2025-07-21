@@ -432,7 +432,7 @@ public class MotherloadMineScript extends Script
         if (!config.mineUpstairs())
         {
             Stream<Rs2PlayerModel> players = Rs2Player.getPlayers(it -> it != null && it.getWorldLocation().distanceTo(wallObject.getWorldLocation()) <= 2);
-            if (players.findAny().isPresent()) return false;
+            if (players.findAny().isPresent() && !config.ignorePlayers()) return false;
         }
 
         if (config.mineUpstairs())
